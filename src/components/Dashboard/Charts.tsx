@@ -6,6 +6,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import Card from "@components/Ui/card";
 
 const data = [
   { name: "Mon", incidents: 5 },
@@ -17,7 +18,7 @@ const data = [
 
 const Charts = () => {
   return (
-    <div className="bg-white p-4 rounded-xl shadow">
+    <Card>
       <h2 className="font-semibold mb-3">Incident Trends</h2>
 
       <ResponsiveContainer width="100%" height={250}>
@@ -28,7 +29,7 @@ const Charts = () => {
           <Line type="monotone" dataKey="incidents" stroke="#2563eb" />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </Card>
   );
 };
 

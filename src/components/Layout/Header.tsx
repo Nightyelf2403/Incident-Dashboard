@@ -1,5 +1,6 @@
 import { useAuth } from "@src/context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Button from "@components/Ui/button";
 
 const Header = () => {
   const { user, logout } = useAuth();
@@ -17,23 +18,21 @@ const Header = () => {
       {user ? (
         <div className="flex items-center gap-4">
           <span className="text-sm">👤 {user.name}</span>
-          <button
+
+          <Button
             onClick={() => {
               logout();
               navigate("/");
             }}
-            className="text-red-500 text-sm"
+            className="bg-red-500 hover:bg-red-600"
           >
             Logout
-          </button>
+          </Button>
         </div>
       ) : (
-        <button
-          onClick={() => navigate("/login")}
-          className="text-blue-600 text-sm"
-        >
+        <Button onClick={() => navigate("/login")}>
           Login
-        </button>
+        </Button>
       )}
     </div>
   );

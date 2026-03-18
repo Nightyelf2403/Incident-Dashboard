@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "@components/Ui/button";
 import Card from "@components/Ui/card";
 import Label from "@components/Ui/label";
+import Input from "@components/Ui/input";
 import { useAuth } from "@src/context/AuthContext";
 
 const Login = () => {
@@ -24,18 +25,13 @@ const Login = () => {
 
         <div>
           <Label text="Email" />
-          <input
-            className="w-full p-2 border rounded mt-1"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <Input value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
 
         <div>
           <Label text="Password" />
-          <input
+          <Input
             type="password"
-            className="w-full p-2 border rounded mt-1"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
