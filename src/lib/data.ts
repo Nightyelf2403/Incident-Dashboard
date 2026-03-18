@@ -3,14 +3,18 @@ export const incidents = [
     id: "1",
     title: "Highway Accident",
     severity: "critical",
-    status: "active",
     time: "2 mins ago",
   },
   {
     id: "2",
-    title: "Server Warning",
+    title: "Server Overload",
     severity: "warning",
-    status: "active",
     time: "10 mins ago",
+  },
+  {
+    id: "3",
+    title: "Minor Traffic Delay",
+    severity: "normal",
+    time: "30 mins ago",
   },
 ];
