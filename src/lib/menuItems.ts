@@ -1,5 +1,5 @@
 export const menuItems = [
-  { name: "Dashboard", path: "/" },
-  { name: "Home", path: "/home" },
+  { name: "Home", path: "/" },
+  { name: "Dashboard", path: "/dashboard" },
   { name: "Settings", path: "/settings" },
 ];
