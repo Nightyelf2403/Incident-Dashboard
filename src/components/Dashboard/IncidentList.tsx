@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Card from "@components/Ui/card";
+import Button from "@components/Ui/button";
 
 type Incident = {
   id: number;
@@ -28,7 +30,7 @@ const IncidentList = () => {
       };
 
       setIncidents((prev) => [newIncident, ...prev]);
-    }, 5000);
+    }, 50000);
 
     return () => clearInterval(interval);
   }, []);
@@ -51,32 +53,28 @@ const IncidentList = () => {
   return (
     <div className="space-y-3">
       {incidents.map((inc) => (
-        <div
-          key={inc.id}
-          className="glass p-4 flex justify-between items-center hover:shadow-xl transition-all duration-300"
-        >
-          <div>
-            <h3 className="font-semibold">{inc.title}</h3>
-            <p className="text-sm text-gray-500">{inc.time}</p>
-          </div>
+        <Card key={inc.id}>
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-semibold">{inc.title}</h3>
+              <p className="text-sm text-gray-500">{inc.time}</p>
+            </div>
 
-          <div className="flex items-center gap-3">
-            <span
-              className={`text-xs px-3 py-1 rounded-full ${statusStyles[inc.status]}`}
-            >
-              {inc.status}
-            </span>
-
-            {inc.status !== "resolved" && (
-              <button
-                onClick={() => markResolved(inc.id)}
-                className="text-xs px-3 py-1 bg-blue-600 text-white rounded hover:scale-105 transition"
+            <div className="flex items-center gap-3">
+              <span
+                className={`text-xs px-3 py-1 rounded-full ${statusStyles[inc.status]}`}
               >
-                Resolve
-              </button>
-            )}
+                {inc.status}
+              </span>
+
+              {inc.status !== "resolved" && (
+                <Button onClick={() => markResolved(inc.id)}>
+                  Resolve
+                </Button>
+              )}
+            </div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   );
