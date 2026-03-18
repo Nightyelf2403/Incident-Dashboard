@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider, useSelector } from "react-redux";
 import App from "./App";
 import { store, RootState } from "@src/redux/store";
