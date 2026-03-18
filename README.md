@@ -1,73 +1,129 @@
-# React + TypeScript + Vite
+# 🚨 Incident Monitoring Dashboard  
+### Axentra OS Frontend Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📌 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is a **frontend application** developed as part of the **Axentra OS assessment**.  
 
-## React Compiler
+It demonstrates a scalable and structured React application for monitoring incidents in real-time, focusing on **clean architecture, reusable UI components, and modern frontend practices**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Key Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📊 **Dashboard View**
+  - Displays incident statistics and trends
+  - Includes charts and real-time simulated updates
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔐 **Authentication (Simulated)**
+  - Login and Signup pages
+  - Maintains user session in frontend
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 🧩 **Centralized UI Components**
+  - Reusable `Button`, `Card`, and `Label` components
+  - Ensures consistency and scalability across the app
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- ⚙️ **Settings Page**
+  - Theme toggle (Redux-based)
+  - User preference placeholder
+
+- 📄 **Legal Pages**
+  - Terms & Conditions
+  - Privacy Policy
+
+- 🔄 **Real-Time Simulation**
+  - Incident list updates dynamically
+
+---
+
+## 🏗️ Project Structure
+
+The project follows a **modular and scalable folder structure**:
+
+```
+src/
+├── components/
+│   ├── Ui/              # Reusable UI components (Button, Card, Label)
+│   ├── Layout/          # Header, Sidebar, MainLayout
+│   └── Dashboard/       # Dashboard-specific components
+│
+├── pages/               # Route-level pages (Home, Dashboard, Settings, Auth)
+├── redux/               # State management (store, slices)
+├── router/              # Routing configuration
+├── context/             # Auth & theme context
+├── auth/                # Auth service structure (no API calls)
+├── hooks/               # Custom hooks
+├── lib/                 # Static data & constants
+├── utility/             # Helper functions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧠 Architecture Highlights
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Component Reusability**  
+  All UI elements are centralized in the `components/Ui` directory.
+
+- **Separation of Concerns**  
+  Routing, state management, UI, and utilities are clearly separated.
+
+- **Scalable Design**  
+  Designed to support future backend integration and feature expansion.
+
+- **Clean Routing Setup**  
+  Routes are defined in a dedicated file and rendered via a router component.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 19**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **Redux Toolkit**
+- **React Router**
+- **Recharts**
+- **Lucide React**
+
+---
+
+## ⚠️ Notes
+
+- This is a **frontend-only implementation**
+- Authentication is **simulated** (no backend integration)
+- API service structure is prepared but does not make real requests
+
+---
+
+## 🚀 Getting Started
+
+### Install dependencies
+```bash
+npm install
 ```
+
+### Run development server
+```bash
+npm run dev
+```
+
+---
+
+## 📬 Submission
+
+This project was developed as part of the **Axentra OS frontend assessment**, focusing on:
+
+- Code structure
+- Reusability
+- Clean UI implementation
+- Maintainable architecture
+
+---
+
+## 👨‍💻 Author
+
+**Lalith Aditya Chunduri**  
+Frontend Developer | AI & Full-Stack Enthusiast
