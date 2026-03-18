@@ -24,7 +24,7 @@ const ThemeWrapper = ({ children }: { children: React.ReactNode }) => {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <Provider store={store}>
           <ThemeWrapper>
@@ -32,6 +32,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           </ThemeWrapper>
         </Provider>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
