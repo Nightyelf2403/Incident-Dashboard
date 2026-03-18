@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "@src/redux/slices/themeSlice";
 import { RootState } from "@src/redux/store";
+import Card from "@components/Ui/card";
+import Button from "@components/Ui/button";
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -11,7 +13,7 @@ const Settings = () => {
       <h1 className="text-2xl font-bold">⚙️ Settings</h1>
 
       {/* Appearance */}
-      <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+      <Card>
         <h2 className="font-semibold mb-3 text-lg">Appearance</h2>
 
         <div className="flex items-center justify-between">
@@ -19,35 +21,32 @@ const Settings = () => {
             Theme: {dark ? "Dark Mode" : "Light Mode"}
           </span>
 
-          <button
-            onClick={() => dispatch(toggleTheme())}
-            className="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-black transition"
-          >
+          
+          <Button onClick={() => dispatch(toggleTheme())}>
             Toggle Theme
-          </button>
+          </Button>
         </div>
-      </div>
+      </Card>
 
       {/* User Info */}
-      <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+      <Card>
         <h2 className="font-semibold mb-3 text-lg">User Preferences</h2>
 
         <p className="text-gray-500 text-sm">
           Customize your dashboard experience. More personalization features
           like notification preferences and layouts can be added here.
         </p>
-      </div>
+      </Card>
 
       {/* About */}
-      <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+      <Card>
         <h2 className="font-semibold mb-3 text-lg">About</h2>
 
         <p className="text-gray-500 text-sm">
           This is a modern incident monitoring dashboard built using React,
-          TypeScript, and scalable frontend architecture. It demonstrates
-          routing, state management, reusable UI components, and clean design.
+          TypeScript, and scalable frontend architecture.
         </p>
-      </div>
+      </Card>
     </div>
   );
 };

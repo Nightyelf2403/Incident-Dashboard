@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Button from "@components/Ui/button";
+import Card from "@components/Ui/card";
 
 const reviews = [
   "Amazing UI!",
@@ -32,23 +34,21 @@ const Home = () => {
           in real-time with powerful insights and scalability.
         </p>
 
-        <button
-          onClick={() => navigate("/dashboard")}
-          className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
-        >
+        
+        <Button onClick={() => navigate("/dashboard")}>
           Go to Dashboard
-        </button>
+        </Button>
       </div>
 
       {/* FEATURES */}
       <div className="grid grid-cols-3 gap-6 mt-16 px-10">
         {["Monitoring", "Analytics", "Scalability"].map((f) => (
-          <div className="glass p-6 shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <Card key={f}>
             <h3 className="font-semibold mb-2">{f}</h3>
             <p className="text-sm text-gray-600">
               Powerful tools to handle real-time systems efficiently.
             </p>
-          </div>
+          </Card>
         ))}
       </div>
 
@@ -56,10 +56,10 @@ const Home = () => {
       <div className="mt-20 text-center px-10">
         <h2 className="text-2xl font-bold mb-6">What Users Say</h2>
 
-        <div className="glass p-6 shadow max-w-xl mx-auto transition-all duration-500">
-          ⭐⭐⭐⭐⭐
+        <Card>
+          ⭐⭐⭐
           <p className="text-gray-700 mt-2">{reviews[index]}</p>
-        </div>
+        </Card>
       </div>
     </div>
   );
