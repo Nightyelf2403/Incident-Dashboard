@@ -9,14 +9,24 @@ const IncidentList = () => {
       {incidents.map((incident) => (
         <Card key={incident.id}>
           <div className="flex justify-between items-center">
+            {/* Left */}
             <div>
-              <h3 className="font-semibold">{incident.title}</h3>
-              <p className="text-sm text-gray-500">{incident.time}</p>
+              <h3 className="font-semibold text-gray-800">
+                {incident.title}
+              </h3>
+              <p className="text-sm text-gray-500">
+                {incident.time}
+              </p>
             </div>
 
+            {/* Right */}
             <Badge
               label={incident.severity}
-              color={SEVERITY_COLORS[incident.severity as keyof typeof SEVERITY_COLORS]}
+              color={
+                SEVERITY_COLORS[
+                  incident.severity as keyof typeof SEVERITY_COLORS
+                ]
+              }
             />
           </div>
         </Card>

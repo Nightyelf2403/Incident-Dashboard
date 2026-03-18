@@ -1,10 +1,6 @@
-type Props = {
-  children: React.ReactNode;
-};
-
-const Card = ({ children }: Props) => {
+const Card = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-white shadow rounded-xl p-4">
+    <div className="bg-white shadow-md rounded-2xl p-4 hover:shadow-lg transition">
       {children}
     </div>
   );
